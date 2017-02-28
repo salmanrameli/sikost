@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', [
+    'as' => 'admin.home',
+    'uses' => 'AdminController@home'
+]);
