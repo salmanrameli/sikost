@@ -19,3 +19,7 @@ Route::get('/admin', [
     'as' => 'admin.home',
     'uses' => 'AdminController@home'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
