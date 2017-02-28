@@ -5,6 +5,7 @@
     @endsection
 
 @section('content')
+    <h3>{{ $user }}</h3>
     <ul class="nav nav-tabs nav-justified">
         <li class="active"><a data-toggle="tab" href="#menu1">Menu 1</a></li>
         <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>

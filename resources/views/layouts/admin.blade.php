@@ -27,7 +27,7 @@
                     <li><a href="">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
                 </ul>
             </div>
         </div>

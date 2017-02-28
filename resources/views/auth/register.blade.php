@@ -61,10 +61,13 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Role</label>
+                            <label for="role" class="col-md-4 control-label">Role</label>
 
                             <div class="col-md-6">
-                                <input id="role" type="role" class="form-control" name="role" required>
+                                <div class="form-group">
+                                    {{ Form::radio('role', 'admin', true) }}
+                                    {{ Form::label('role', 'Admin', ['class' => 'control-label']) }}
+                                </div>
 
                                 @if ($errors->has('role'))
                                     <span class="help-block">
