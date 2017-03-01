@@ -9,22 +9,17 @@
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
         <script src="{{ asset('bootstrap/js/bootstrap.js') }}" type="text/javascript"></script>
     </head>
-    <body>
+    <body class="background-image">
         <div class="container-fluid">
-            <div class="col-lg-12">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <br>
-                        <h1>Login</h1>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
             <div class="col-lg-12">
                 <br>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-8">
+                <div class="col-lg-8 login-screen">
+                    <div class="text-center">
+                        <br>
+                        <h1><span class="glyphicon glyphicon-log-in"></span> Login</h1>
+                    </div>
+                    <br><br>
                     <ul class="nav nav-tabs nav-justified">
                         <li class="active"><a data-toggle="tab" href="#admin">Admin</a></li>
                         <li><a data-toggle="tab" href="#user">User</a></li>
