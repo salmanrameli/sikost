@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,8 +15,8 @@ class AdminController extends Controller
 
     public function home()
     {
-        $user = Auth::user()->name;
+        $userInfo = Auth::user();
 
-        return view('admin.home')->with('user', $user);
+        return view('admin.home')->with('user', $userInfo);
     }
 }
