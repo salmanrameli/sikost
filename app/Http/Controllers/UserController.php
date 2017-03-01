@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        $user = Auth::user()->name;
+
+        return view('user.home')->with('user', $user);
     }
 
     /**
@@ -58,7 +61,7 @@ class UserController extends Controller
 
         $user->save();
 
-        Session::flash('flash_message', 'User berhasil didaftarkan');
+        Session::flash('status', 'User berhasil didaftarkan');
 
         return redirect()->route('admin.index');
      }

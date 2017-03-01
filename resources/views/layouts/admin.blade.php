@@ -46,10 +46,10 @@
                         </div>
                     @endif
 
-                    @if(Session::has('flash_message'))
+                    @if(Session::has('status'))
                         <br>
                         <div class="alert alert-success">
-                            {{ Session::get('flash_message') }}
+                            {{ Session::get('status') }}
                         </div>
                     @endif
                 </div>

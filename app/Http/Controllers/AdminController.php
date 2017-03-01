@@ -61,7 +61,7 @@ class AdminController extends Controller
 
         $admin->save();
 
-        Session::flash('flash_message', 'Admin berhasil didaftarkan');
+        Session::flash('status', 'Admin berhasil didaftarkan');
 
         return redirect()->route('admin.index');
     }

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-        <title>@yield('title')</title>
+        <title>Homepage – SIKOST</title>
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
         <script src="{{ asset('bootstrap/js/bootstrap.js') }}" type="text/javascript"></script>
@@ -18,75 +18,65 @@
                 <div class="col-lg-8 login-screen">
                     <div class="text-center">
                         <br>
-                        <h1><span class="glyphicon glyphicon-log-in"></span> Login</h1>
+                        <h1>Login</h1>
+                        <small>Enter your credentials below</small>
                     </div>
                     <br><br>
-                    <ul class="nav nav-tabs nav-justified">
-                        <li class="active"><a data-toggle="tab" href="#admin">Admin</a></li>
-                        <li><a data-toggle="tab" href="#user">User</a></li>
-                    </ul>
+                    <div id="admin" class="tab-pane fade in active">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
 
-                    <div class="tab-content">
-                        <br><br>
-                        <div id="admin" class="tab-pane fade in active">
-                            <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                        @if ($errors->has('email'))
-                                            <span class="help-block">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                        @endif
-                                    </div>
+                                    @endif
                                 </div>
+                            </div>
 
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="col-md-4 control-label">Password</label>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
 
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password" required>
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
 
-                                        @if ($errors->has('password'))
-                                            <span class="help-block">
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                        @endif
-                                    </div>
+                                    @endif
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
+                            {{--<div class="form-group">--}}
+                                {{--<div class="col-md-6 col-md-offset-4">--}}
+                                    {{--<div class="checkbox">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
+                            <br>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-success">
+                                        <span class="glyphicon glyphicon-log-in"></span> Enter
+                                    </button>
+
+                                    {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
+                                        {{--Forgot Your Password?--}}
+                                    {{--</a>--}}
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Login
-                                        </button>
-
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            Forgot Your Password?
-                                        </a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div id="user" class="tab-pane fade">
-                            <h3>User</h3>
-                            <p>Some content in menu 1.</p>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
