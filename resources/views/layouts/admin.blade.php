@@ -23,7 +23,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="{{ route('admin.index') }}">Home</a></li>
                     <li><a href="">Page 1</a></li>
                     <li><a href="">Page 2</a></li>
                     <li><a href="">Page 3</a></li>
@@ -35,8 +35,8 @@
         </div>
     </nav>
         <div class="container-fluid">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
                 <div class="row">
                     @if($errors->any())
                         <div class="alert alert-danger">
@@ -54,7 +54,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-lg-2"></div>
+            <div class="col-lg-1"></div>
             @yield('content')
         </div>
     </body>
