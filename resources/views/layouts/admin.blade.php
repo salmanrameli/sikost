@@ -10,6 +10,8 @@
     </head>
     <body>
     <nav class="navbar navbar-default">
+        <div class="banner">
+        </div>
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,6 +35,26 @@
         </div>
     </nav>
         <div class="container-fluid">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="row">
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    @if(Session::has('flash_message'))
+                        <br>
+                        <div class="alert alert-success">
+                            {{ Session::get('flash_message') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
             @yield('content')
         </div>
     </body>
