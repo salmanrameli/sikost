@@ -29,10 +29,11 @@ class LoginController extends Controller
      */
 //    protected $redirectTo = '/admin';
 
-//    public function username()
-//    {
-//        return 'username';
-//    }
+    public function username()
+    {
+        return 'id';
+    }
+
 
     Protected function authenticated(Request $request, $user)
     {
