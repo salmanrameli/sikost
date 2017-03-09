@@ -35,7 +35,7 @@
                 <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}">Register New Room</a></button>
             </div>
             <div class="col-lg-4">
-
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="room/booking">Room Booking</a></button>
             </div>
             <div class="col-lg-4">
 
