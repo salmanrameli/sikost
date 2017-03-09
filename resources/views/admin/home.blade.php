@@ -9,22 +9,37 @@
     <br>
     <ul class="nav nav-tabs nav-justified">
         <li class="active"><a data-toggle="tab" href="#menu1">User</a></li>
-        <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        <li><a data-toggle="tab" href="#menu2">Room</a></li>
         <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
     </ul>
     <div class="tab-content">
 
         <div id="menu1" class="tab-pane fade in active">
             <div class="padding"></div>
-            <div class="col-lg-12">
-                <button type="button" class="btn btn-default btn-lg"><a href="{{ route('admin.create') }}">User Registration</a></button>
+            <div class="col-lg-4">
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">User Registration</a></button>
                 <br><br>
-                <button type="button" class="btn btn-default btn-lg"><a href="{{ route('admin.allUser') }}">View All User</a></button>
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All User</a></button>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+
             </div>
         </div>
 
         <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
+            <div class="padding"></div>
+            <div class="col-lg-4">
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}">Register New Room</a></button>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+
+            </div>
         </div>
 
         <div id="menu3" class="tab-pane fade">

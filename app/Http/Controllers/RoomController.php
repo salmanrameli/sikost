@@ -2,19 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Room;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class AdminController extends Controller
+class RoomController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $userInfo = Auth::user();
 
-        return view('admin.home')->with('user', $userInfo);
     }
 
     /**
@@ -34,7 +25,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.user.register');
+        $rooms = Room::orderBy('room_number', 'asc')->get();
+
+        return view('admin.room.create')->with('rooms', $rooms);
     }
 
     /**
@@ -46,32 +39,16 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required',
-            'name' => 'required',
-            'sex' => 'required',
-            'birth' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-            'password' => 'required|confirmed',
-            'isAdmin' => 'required'
+            'room_number' => 'required'
         ]);
 
-        $admin = new User();
+        $input = $request->all();
 
-        $admin->id = $request->id;
-        $admin->name = $request->name;
-        $admin->sex = $request->sex;
-        $admin->birth = $request->birth;
-        $admin->address = $request->address;
-        $admin->phone = $request->phone;
-        $admin->password = bcrypt($request->password);
-        $admin->isAdmin = $request->isAdmin;
+        Room::create($input);
 
-        $admin->save();
+        Session::flash('status', 'Room registered successfully');
 
-        Session::flash('status', 'User successfully added');
-
-        return redirect()->route('admin.index');
+        return redirect()->route('room.create');
     }
 
     /**
@@ -117,12 +94,5 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function showAll()
-    {
-        $users = DB::table('users')->where('isAdmin', '=', false)->get();
-
-        return view('admin.user.all')->with('users', $users);
     }
 }
