@@ -53,7 +53,7 @@ class AdminController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'password' => 'required|confirmed',
-            'role' => 'required'
+            'isAdmin' => 'required'
         ]);
 
         $admin = new User();
@@ -121,9 +121,8 @@ class AdminController extends Controller
 
     public function showAll()
     {
-//        $users = DB::table('users')->where('isAdmin', '=', 'true')->get();
-//        $users = User::all();
+        $users = DB::table('users')->where('isAdmin', '=', false)->get();
 
-        return view('admin.all');
+        return view('admin.all')->with('users', $users);
     }
 }

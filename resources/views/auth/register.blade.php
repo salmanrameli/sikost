@@ -135,7 +135,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('isAdmin') ? ' has-error' : '' }}">
                             <label for="role" class="col-md-4 control-label">Role</label>
 
                             <div class="col-md-6">
@@ -144,9 +144,9 @@
                                     {{ Form::label('role', 'Admin', ['class' => 'control-label']) }}
                                 </div>
 
-                                @if ($errors->has('role'))
+                                @if ($errors->has('isAdmin'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('role') }}</strong>
+                                        <strong>{{ $errors->first('isAdmin') }}</strong>
                                     </span>
                                 @endif
                             </div>

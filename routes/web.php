@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('admin/all_users', [
+    'as' => 'admin.allUser',
+    'uses' => 'AdminController@showAll'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,10 +27,5 @@ Route::resource('user', 'UserController');
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('admin/all_users', [
-    'as' => 'admin.allUser',
-    'uses' => 'AdminController@showAll'
-]);
 
 //Route::get('/home', 'HomeController@index');

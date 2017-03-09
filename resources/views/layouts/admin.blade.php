@@ -55,7 +55,9 @@
                 </div>
             </div>
             <div class="col-lg-1"></div>
-            @yield('content')
+            <div class="col-lg-12">
+                @yield('content')
+            </div>
         </div>
     </body>
     <footer>
