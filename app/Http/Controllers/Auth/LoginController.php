@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-//    protected $redirectTo = '/admin';
+    protected $redirectTo = '/admin';
 
     public function username()
     {
@@ -37,15 +37,9 @@ class LoginController extends Controller
 
     Protected function authenticated(Request $request, $user)
     {
-
-        if($user->role == 'admin')
+        if($request->isAdmin == 'true')
         {
-            return redirect()->route('admin.index');
-        }
-
-        if($user->role == 'user')
-        {
-            return redirect()->route('user.index');
+            return redirect('/admin');
         }
     }
 

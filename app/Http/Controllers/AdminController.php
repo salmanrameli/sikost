@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -33,7 +34,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.register');
     }
 
     /**
@@ -45,8 +46,12 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'id' => 'required',
             'name' => 'required',
-            'email' => 'required|email',
+            'sex' => 'required',
+            'birth' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
             'password' => 'required|confirmed',
             'role' => 'required'
         ]);
@@ -55,13 +60,16 @@ class AdminController extends Controller
 
         $admin->id = $request->id;
         $admin->name = $request->name;
-        $admin->email = $request->email;
+        $admin->sex = $request->sex;
+        $admin->birth = $request->birth;
+        $admin->address = $request->address;
+        $admin->phone = $request->phone;
         $admin->password = bcrypt($request->password);
-        $admin->role = $request->role;
+        $admin->isAdmin = $request->isAdmin;
 
         $admin->save();
 
-        Session::flash('status', 'Admin berhasil didaftarkan');
+        Session::flash('status', 'User successfully added');
 
         return redirect()->route('admin.index');
     }
@@ -109,5 +117,13 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showAll()
+    {
+//        $users = DB::table('users')->where('isAdmin', '=', 'true')->get();
+//        $users = User::all();
+
+        return view('admin.all');
     }
 }

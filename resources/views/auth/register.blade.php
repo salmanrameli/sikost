@@ -140,7 +140,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ Form::radio('role', 'admin', true) }}
+                                    {{ Form::radio('role', 'true', true) }}
                                     {{ Form::label('role', 'Admin', ['class' => 'control-label']) }}
                                 </div>
 

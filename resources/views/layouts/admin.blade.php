@@ -23,7 +23,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ route('admin.index') }}">Home</a></li>
+                    <li><a href="{{ route('admin.index') }}">Home</a></li>
                     <li><a href="">Page 1</a></li>
                     <li><a href="">Page 2</a></li>
                     <li><a href="">Page 3</a></li>
@@ -58,4 +58,7 @@
             @yield('content')
         </div>
     </body>
+    <footer>
+        <div class="page-footer"></div>
+    </footer>
 </html>

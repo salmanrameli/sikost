@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
             'address' => 'no address',
             'phone' => '11111',
             'password' => bcrypt('salman'),
-            'role' => 'admin'
+            'isAdmin' => true
         ]);
     }
 }
