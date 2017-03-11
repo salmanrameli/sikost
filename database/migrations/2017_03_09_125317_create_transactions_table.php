@@ -15,6 +15,12 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('user_id');
+            $table->string('room_number');
+            $table->date('rent_started');
+            $table->date('rent_ended');
+
             $table->timestamps();
         });
     }

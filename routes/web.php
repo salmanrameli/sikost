@@ -32,6 +32,8 @@ Route::resource('user', 'UserController');
 
 Route::resource('room', 'RoomController');
 
+Route::resource('transaction', 'TransactionController');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Route::get('/home', 'HomeController@index');
