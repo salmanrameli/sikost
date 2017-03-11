@@ -17,7 +17,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $transaction = Transaction::all();
+
+        return view('admin.transaction.index')->with('transactions', $transaction);
     }
 
     /**
