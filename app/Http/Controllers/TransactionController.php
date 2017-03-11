@@ -6,6 +6,7 @@ use App\Room;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class TransactionController extends Controller
@@ -29,7 +30,11 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('admin.room.booking');
+        $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->pluck('room_number');
+
+        return view('admin.room.booking')->with('rooms', $rooms);
     }
 
     /**

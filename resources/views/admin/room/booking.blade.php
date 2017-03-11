@@ -19,8 +19,14 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('room_number', 'Room Number', ['class' => 'control-label']) }}
-            {{ Form::text('room_number', null, ['class' => 'form-control']) }}
+            <label for="room_number">Room Number</label>
+            <select class="form-control" name="room_number" id="room_number" data-parsley-required="true">
+                @foreach ($rooms as $room)
+                    {
+                    <option value="{{ $room }}">{{ $room }}</option>
+                    }
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">

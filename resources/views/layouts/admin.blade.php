@@ -28,8 +28,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href={{ route('admin.create') }}>User Registration</a></li>
-                            <li><a href="{{ route('admin.allUser') }}">View All User</a></li>
+                            <li><a href={{ route('admin.create') }}>Renter Registration</a></li>
+                            <li><a href="{{ route('admin.allUser') }}">View All Renter</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -37,14 +37,15 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('room.create') }}">Register New Room</a></li>
+                            <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Booking & Transaction
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
                             <li><a href="{{ route('transaction.index') }}">Show All Transactions</a></li>
+                            <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -17,9 +17,9 @@
         <div id="menu1" class="tab-pane fade in active">
             <div class="padding"></div>
             <div class="col-lg-4">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">User Registration</a></button>
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
                 <br><br>
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All User</a></button>
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All Renter</a></button>
             </div>
             <div class="col-lg-4">
 
@@ -44,7 +44,7 @@
         <div id="menu3" class="tab-pane fade">
             <div class="padding"></div>
             <div class="col-lg-4">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}">Show all transactions</a></button>
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}">Show All Transactions</a></button>
                 <br>
                 <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
             </div>
