@@ -101,8 +101,12 @@ class RoomController extends Controller
 
     public function checkAvailability()
     {
-        $rooms = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get();
+        $booked = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get();
 
-        return view('admin.room.availability')->with('rooms', $rooms);
+        $rooms = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->get();
+
+        return view('admin.room.availability')->with('booked', $booked)->with('empty', $empty);
     }
 }
