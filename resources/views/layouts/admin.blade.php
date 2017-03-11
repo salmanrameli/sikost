@@ -37,10 +37,16 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('room.create') }}">Register New Room</a></li>
+                            <li><a href="room/booking">Room Booking</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="">Page 3</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Transaction
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('transaction.index') }}">Show All Transactions</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>

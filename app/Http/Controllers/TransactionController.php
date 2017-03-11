@@ -69,7 +69,9 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        //
+        $details = Transaction::findorFail($id);
+
+        return view('admin.transaction.show')->with('details', $details);
     }
 
     /**

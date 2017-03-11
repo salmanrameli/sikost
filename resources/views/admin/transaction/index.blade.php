@@ -15,6 +15,7 @@
             <th>Room Number</th>
             <th>Rent Started</th>
             <th>Rent Ended</th>
+            <th>Details</th>
         </tr>
         @foreach($transactions as $transaction)
         <tr>
@@ -23,6 +24,9 @@
                 <td>{{ $transaction->room_number }}</td>
                 <td>{{ $transaction->rent_started }}</td>
                 <td>{{ $transaction->rent_ended }}</td>
+                <td>
+                    <button type="button" class="btn btn-info"><a href="{{ route('transaction.show', ['id' => $transaction->id]) }}">Show Details</a></button>
+                </td>
         </tr>
         @endforeach
     </table>
