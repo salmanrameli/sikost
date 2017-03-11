@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class RoomController extends Controller
@@ -94,5 +97,12 @@ class RoomController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function checkAvailability()
+    {
+        $rooms = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get();
+
+        return view('admin.room.availability')->with('rooms', $rooms);
     }
 }

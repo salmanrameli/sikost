@@ -17,14 +17,14 @@ Route::get('admin/all_users', [
     'uses' => 'AdminController@showAll'
 ]);
 
-Route::get('room/booking', function() {
-    return view('admin.room.booking');
-});
+Route::get('room/availability', [
+    'as' => 'room.check_availability',
+    'uses' => 'RoomController@checkAvailability'
+]);
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::resource('admin', 'AdminController');
 
