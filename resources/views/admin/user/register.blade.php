@@ -121,15 +121,13 @@
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('isAdmin') ? ' has-error' : '' }}">
+        <div class="form-group hidden{{ $errors->has('isAdmin') ? ' has-error' : '' }}">
             <label for="role" class="col-md-4 control-label">Role</label>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    {{ Form::radio('role', 'true') }}
-                    {{ Form::label('role', 'Admin', ['class' => 'control-label']) }}<br>
-                    {{ Form::radio('role', 'false', true) }}
-                    {{ Form::label('role', 'User', ['class' => 'control-label']) }}
+                    {{ Form::radio('isAdmin', 0, true) }}
+                    {{ Form::label('isAdmin', 'User', ['class' => 'control-label']) }}
                 </div>
 
                 @if ($errors->has('isAdmin'))
@@ -142,8 +140,8 @@
 
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                    Register
+                <button type="submit" class="btn btn-success btn-lg">
+                    Register Renter
                 </button>
             </div>
         </div>
