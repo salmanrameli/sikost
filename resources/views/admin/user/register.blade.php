@@ -116,7 +116,6 @@
 
         <div class="form-group hidden">
             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
             <div class="col-md-6">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" value="password" required>
             </div>
