@@ -17,6 +17,11 @@ Route::get('admin/all_users', [
     'uses' => 'AdminController@showAll'
 ]);
 
+Route::get('admin/new_admin', [
+    'as' => 'admin.admin_create',
+    'uses' => 'AdminController@createAdmin'
+]);
+
 Route::get('room/availability', [
     'as' => 'room.check_availability',
     'uses' => 'RoomController@checkAvailability'

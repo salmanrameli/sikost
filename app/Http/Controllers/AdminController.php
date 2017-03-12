@@ -125,4 +125,9 @@ class AdminController extends Controller
 
         return view('admin.user.all')->with('users', $users);
     }
+
+    public function createAdmin()
+    {
+        return view('admin.admin.create');
+    }
 }
