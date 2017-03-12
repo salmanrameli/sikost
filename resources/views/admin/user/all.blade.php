@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('title')
-    All Users
+    Renters List
     @endsection
 
 @section('content')
-    <h1>All Users</h1>
+    <h1>Renters List</h1>
     <div class="padding"></div>
 
         <table class="table">

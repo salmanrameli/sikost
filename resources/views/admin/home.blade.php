@@ -16,22 +16,22 @@
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
                     <br>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">Show All Renter</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Renter</a></button>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Administrator Settings
+                    <span class="glyphicon glyphicon-cog"></span> Administrator Settings
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.admin_create') }}">Register New Admin</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.admin_create') }}"><span class="glyphicon glyphicon-user"></span> Register New Admin</a></button>
                 </div>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Rooms
+                    <span class="glyphicon glyphicon-tags"></span> Rooms
                 </div>
                 <div class="panel-body">
                     <div class="col-lg-6 red">
@@ -45,7 +45,7 @@
                     <div class="col-lg-12">
                         <br>
                     </div>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}">Register New Room</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
                     <br>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
                 </div>
@@ -54,12 +54,19 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Booking & Transaction
+                    <span class="glyphicon glyphicon-book"></span> Booking & Transaction
                 </div>
                 <div class="panel-body">
+                    <div class="col-lg-12 blue">
+                        <h4>Total Transactions</h4>
+                        <h2>{{ $transactions }}</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                    </div>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
                     <br>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}">Show All Transactions</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Transactions</a></button>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Room
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('room.create') }}">Register New Room</a></li>
+                            <li><a href="{{ route('room.create') }}">Add New Room</a></li>
                             <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
                         </ul>
                     </li>
@@ -46,6 +46,13 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
                             <li><a href="{{ route('transaction.index') }}">Show All Transactions</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Settings
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('admin.admin_create') }}">Register New Admin</a></li>
                         </ul>
                     </li>
                 </ul>

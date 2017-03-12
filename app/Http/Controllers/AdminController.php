@@ -32,7 +32,9 @@ class AdminController extends Controller
 
         $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->count();
 
-        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty);
+        $transactions = Transaction::all()->count();
+
+        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('transactions', $transactions);
     }
 
     /**
