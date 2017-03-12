@@ -19,7 +19,7 @@
             <div class="col-lg-4">
                 <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
                 <br><br>
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All Renter</a></button>
+                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All Registered Renter</a></button>
             </div>
             <div class="col-lg-4">
 

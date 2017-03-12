@@ -25,11 +25,11 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('admin.index') }}">Home</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Renter
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href={{ route('admin.create') }}>Renter Registration</a></li>
-                            <li><a href="{{ route('admin.allUser') }}">View All Renter</a></li>
+                            <li><a href="{{ route('admin.allUser') }}">View All Registered Renter</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
