@@ -6796,3 +6796,8 @@ button.close {
 .red {
   background-color: orangered;
 }
+
+.rounded-corners {
+  border-radius: 10px;
+  padding: 10px;
+}

@@ -7,49 +7,60 @@
 @section('content')
     <h2>Greetings, {{ $user->name }}</h2>
     <br>
-    <div class="col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Renter
+    <div class="col-lg-12">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Renter
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
+                    <br>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">Show All Renter</a></button>
+                </div>
             </div>
-            <div class="panel-body">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
-                <br>
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}">View All Registered Renter</a></button>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Rooms
-            </div>
-            <div class="panel-body">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}">Register New Room</a></button>
-                <br>
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Administrator Settings
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.admin_create') }}">Register New Admin</a></button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Booking & Transaction
-            </div>
-            <div class="panel-body">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
-                <br>
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}">Show All Transactions</a></button>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Rooms
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-6 red">
+                        <h4>Booked Room</h4>
+                        <h2>{{ $booked }}</h2>
+                    </div>
+                    <div class="col-lg-6 green">
+                        <h4>Empty Room</h4>
+                        <h2>{{ $empty }}</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                    </div>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}">Register New Room</a></button>
+                    <br>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Administrator Settings
-            </div>
-            <div class="panel-body">
-                <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.admin_create') }}">Register New Admin</a></button>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Booking & Transaction
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
+                    <br>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}">Show All Transactions</a></button>
+                </div>
             </div>
         </div>
     </div>

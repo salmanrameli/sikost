@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Transaction;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +26,13 @@ class AdminController extends Controller
     {
         $userInfo = Auth::user();
 
-        return view('admin.home')->with('user', $userInfo);
+        $booked = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->count();
+
+        $rooms = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->count();
+
+        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty);
     }
 
     /**

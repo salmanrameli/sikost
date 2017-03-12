@@ -29,7 +29,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href={{ route('admin.create') }}>Renter Registration</a></li>
-                            <li><a href="{{ route('admin.allUser') }}">View All Registered Renter</a></li>
+                            <li><a href="{{ route('admin.allUser') }}">Show All Renter</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
