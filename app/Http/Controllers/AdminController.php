@@ -103,7 +103,7 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -139,5 +139,12 @@ class AdminController extends Controller
     public function createAdmin()
     {
         return view('admin.admin.create');
+    }
+
+    public function allRenter()
+    {
+        $users = DB::table('users')->where('isAdmin', '=', false)->get();
+
+        return view('admin.user.list')->with('users', $users);
     }
 }

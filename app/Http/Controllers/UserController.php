@@ -85,7 +85,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findorFail($id);
+
+        return view('admin.user.edit')->with('user', $user);
     }
 
     /**
@@ -97,7 +99,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findorFail($id);
+
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'sex' => 'required',
+            'birth' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $user->fill($input)->save();
+
+        Session::flash('status', 'User details successfully changed');
+
+        return redirect()->route('admin.index');
     }
 
     /**

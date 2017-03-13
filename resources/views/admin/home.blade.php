@@ -16,6 +16,7 @@
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Renter</a></button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('admin.allRenter') }}"><span class="glyphicon glyphicon-edit"></span> Edit Renter Details</a></button>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -30,7 +31,7 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Room Status
+                    <span class="glyphicon glyphicon-stats"></span> Room Status
                 </div>
                 <div class="panel-body">
                     <div class="col-lg-6 red">
@@ -58,7 +59,7 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Transaction Stats
+                    <span class="glyphicon glyphicon-stats"></span> Transaction Stats
                 </div>
                 <div class="panel-body">
                     <div class="col-lg-12 blue">
@@ -78,16 +79,4 @@
             </div>
         </div>
     </div>
-    <br>
-    {{--<div class="col-lg-12">--}}
-        {{--<div class="col-lg-4">--}}
-
-        {{--</div>--}}
-        {{--<div class="col-lg-4">--}}
-            {{----}}
-        {{--</div>--}}
-        {{--<div class="col-lg-4">--}}
-            {{----}}
-        {{--</div>--}}
-    {{--</div>--}}
     @endsection

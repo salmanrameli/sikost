@@ -19,17 +19,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">SIKOST</a>
+                <a class="navbar-brand" href="{{ route('admin.index') }}">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('admin.index') }}">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Renter
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href={{ route('admin.create') }}>Renter Registration</a></li>
                             <li><a href="{{ route('admin.allUser') }}">Show All Renter</a></li>
+                            <li><a href="{{ route('admin.allRenter') }}">Edit Renter Details</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

@@ -37,6 +37,11 @@ Route::get('room/remove', [
     'uses' => 'RoomController@removeRoom'
 ]);
 
+Route::get('renter/all', [
+    'as' => 'admin.allRenter',
+    'uses' => 'AdminController@allRenter'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
