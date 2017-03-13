@@ -37,6 +37,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('room.create') }}">Add New Room</a></li>
+                            <li><a href="{{ route('room.remove') }}">Remove Room</a></li>
                             <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
                         </ul>
                     </li>
