@@ -63,6 +63,7 @@
         </div>
 
         {{ Form::submit('Register Administrator', ['class' => 'btn btn-lg btn-success']) }}
+        {{ Form::close() }}
 
     </div>
     <div class="col-lg-2"></div>

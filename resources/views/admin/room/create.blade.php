@@ -26,6 +26,7 @@
         </div>
 
         {{ Form::submit('Register Room', ['class' => 'btn btn-default btn-lg']) }}
+        {{ Form::close() }}
     </div>
     <div class="col-lg-3"></div>
     @endsection

@@ -40,6 +40,7 @@
         </div>
 
         {{ Form::submit('Book Now', ['class' => 'btn btn-lg btn-success']) }}
+        {{ Form::close() }}
     </div>
     <div class="col-lg-3"></div>
     @endsection
