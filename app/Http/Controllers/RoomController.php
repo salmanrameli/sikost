@@ -96,7 +96,13 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::findorFail($id);
+
+        $room->delete();
+
+        Session::flash('status', 'Room successfully deleted');
+
+        return redirect()->route('admin.index');
     }
 
     public function checkAvailability()
@@ -108,5 +114,14 @@ class RoomController extends Controller
         $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->get();
 
         return view('admin.room.availability')->with('booked', $booked)->with('empty', $empty);
+    }
+
+    public function removeRoom()
+    {
+        $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->get();
+
+        return view('admin.room.remove')->with('rooms', $rooms);
     }
 }

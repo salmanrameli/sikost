@@ -15,7 +15,6 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}">Renter Registration</a></button>
-                    <br>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.allUser') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Renter</a></button>
                 </div>
             </div>
@@ -46,7 +45,7 @@
                         <br>
                     </div>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
-                    <br>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.remove') }}"><span class="glyphicon glyphicon-minus"></span> Remove Room</a></button>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
                 </div>
             </div>
@@ -65,7 +64,6 @@
                         <br>
                     </div>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
-                    <br>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Transactions</a></button>
                 </div>
             </div>

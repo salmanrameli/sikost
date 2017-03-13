@@ -27,6 +27,11 @@ Route::get('room/availability', [
     'uses' => 'RoomController@checkAvailability'
 ]);
 
+Route::get('room/remove', [
+    'as' => 'room.remove',
+    'uses' => 'RoomController@removeRoom'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
