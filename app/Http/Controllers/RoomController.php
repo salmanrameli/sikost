@@ -73,7 +73,9 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::findorFail($id);
+
+        return view('admin.room.edit')->with('room', $room);
     }
 
     /**
@@ -85,7 +87,19 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $room = Room::findorFail($id);
+
+        $this->validate($request, [
+            'room_number' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $room->fill($input)->save();
+
+        Session::flash('status', 'Room number changed successfully');
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -114,6 +128,15 @@ class RoomController extends Controller
         $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->get();
 
         return view('admin.room.availability')->with('booked', $booked)->with('empty', $empty);
+    }
+
+    public function changeRoomNumber()
+    {
+        $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->get();
+
+        return view('admin.room.room_list')->with('rooms', $rooms);
     }
 
     public function removeRoom()

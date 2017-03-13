@@ -37,6 +37,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('room.create') }}">Add New Room</a></li>
+                            <li><a href="{{ route('room.room_list') }}">Edit Room Number</a></li>
                             <li><a href="{{ route('room.remove') }}">Remove Room</a></li>
                             <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
                         </ul>
@@ -68,8 +69,9 @@
             <div class="col-lg-10">
                 <div class="row">
                     @if($errors->any())
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger alert-dismissable">
                             @foreach($errors->all() as $error)
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                 <p>{{ $error }}</p>
                             @endforeach
                         </div>
@@ -77,7 +79,8 @@
 
                     @if(Session::has('status'))
                         <br>
-                        <div class="alert alert-success">
+                        <div class="alert alert-success alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             {{ Session::get('status') }}
                         </div>
                     @endif
