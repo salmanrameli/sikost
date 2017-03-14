@@ -1100,7 +1100,7 @@ textarea {
 }
 a {
   /*color: #337ab7;*/
-  color: #4b4b4b;
+  color: black;
   text-decoration: none;
 }
 a:hover,
@@ -6777,9 +6777,9 @@ button.close {
 }
 
 .banner {
-  background-image: url("../../img/stripes.jpg");
+  background-image: url("../../img/zune-1.png");
   height:10px;
-  background-repeat: repeat-x;
+  background-size: cover;
 }
 
 .padding {
@@ -6792,7 +6792,7 @@ button.close {
 }
 
 .green {
-  background-color: #CEEC4E;
+  background-color: #37eb65;
 }
 
 .red {
