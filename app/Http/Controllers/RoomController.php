@@ -18,7 +18,11 @@ class RoomController extends Controller
      */
     public function index()
     {
+        $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
 
+        $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->get();
+
+        return view('admin.room.all')->with('rooms', $rooms);
     }
 
     /**

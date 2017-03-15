@@ -17,10 +17,10 @@ Route::get('room/availability', [
     'uses' => 'RoomController@checkAvailability'
 ]);
 
-Route::get('room/room_list', [
-    'as' => 'room.room_list',
-    'uses' => 'RoomController@changeRoomNumber'
-]);
+//Route::get('room/room_list', [
+//    'as' => 'room.room_list',
+//    'uses' => 'RoomController@changeRoomNumber'
+//]);
 
 Route::get('room/remove', [
     'as' => 'room.remove',

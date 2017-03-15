@@ -50,7 +50,7 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
-                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('room.room_list') }}"><span class="glyphicon glyphicon-edit"></span> Edit Room Number</a></button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('room.index') }}"><span class="glyphicon glyphicon-edit"></span> Change Room Number</a></button>
                     <button type="button" class="btn btn-danger btn-lg btn-block"><a href="{{ route('room.remove') }}"><span class="glyphicon glyphicon-minus"></span> Remove Room</a></button>
                     <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
                 </div>
