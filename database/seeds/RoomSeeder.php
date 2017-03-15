@@ -15,7 +15,7 @@ class RoomSeeder extends Seeder
         $faker = Faker::create();
         foreach (range(1,10) as $index) {
             DB::table('rooms')->insert([
-                'room_number' => $faker->numberBetween($min = 0, $max = 10),
+                'room_number' => $faker->unique()->numberBetween($min = 1, $max = 10),
             ]);
         }
     }

@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
         $faker = Faker::create();
         foreach (range(1,10) as $index) {
             DB::table('users')->insert([
-                'id' => $faker->unique()->randomDigit,
+                'id' => $faker->unique()->numberBetween($min = 1, $max = 10),
                 'name' => $faker->name($gender = 'male'),
                 'sex' => 'male',
                 'birth' => $faker->date,
