@@ -46,7 +46,9 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
-                            <li><a href="{{ route('transaction.index') }}">Show All Transactions</a></li>
+                            <li><a href="{{ route('transaction.index') }}">Show All Booking History</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -55,6 +57,13 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
                             <li><a href="{{ route('admin.all') }}">Show All Admin</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Payments
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
                         </ul>
                     </li>
                 </ul>

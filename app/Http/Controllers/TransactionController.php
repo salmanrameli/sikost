@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\Room;
 use App\Transaction;
 use Carbon\Carbon;
@@ -76,7 +77,11 @@ class TransactionController extends Controller
     {
         $details = Transaction::findorFail($id);
 
-        return view('admin.transaction.show')->with('details', $details);
+        $id = DB::table('transactions')->where('id', '=', $id)->pluck('user_id');
+
+        $payments = DB::table('payments')->where('renter_id', '=', $id)->get();
+
+        return view('admin.transaction.show')->with('details', $details)->with('payments', $payments);
     }
 
     /**

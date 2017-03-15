@@ -37,28 +37,23 @@
             <h5>Rent Ended on</h5>
             <h3>{{ $details->rent_ended }}</h3>
         </div>
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h3>Payment History</h3>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Payment Date</th>
+                    <th>Payment Amount</th>
+                </tr>
+                @foreach($payments as $payment)
+                    <tr>
+                        <td>{{ $payment->date }}</td>
+                        <td>Rp {{ $payment->amount }}</td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
     <div class="col-lg-2"></div>
-    {{--<table class="table">--}}
-        {{--<tr>--}}
-            {{--<th>Transaction ID</th>--}}
-            {{--<td>{{ $details->id }}</td>--}}
-        {{--</tr>--}}
-        {{--<tr>--}}
-            {{--<th>Renter ID</th>--}}
-            {{--<td>{{ $details->user_id }}</td>--}}
-        {{--</tr>--}}
-        {{--<tr>--}}
-            {{--<th>Renter Name</th>--}}
-            {{--<td>{{ $details->user->name }}</td>--}}
-        {{--</tr>--}}
-        {{--<tr>--}}
-            {{--<th>Rent Started</th>--}}
-            {{--<td>{{ $details->rent_started }}</td>--}}
-        {{--</tr>--}}
-        {{--<tr>--}}
-            {{--<th>Rent Ended</th>--}}
-            {{--<td>{{ $details->rent_ended }}</td>--}}
-        {{--</tr>--}}
-    {{--</table>--}}
     @endsection
