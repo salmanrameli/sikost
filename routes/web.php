@@ -17,11 +17,6 @@ Route::get('room/availability', [
     'uses' => 'RoomController@checkAvailability'
 ]);
 
-//Route::get('room/room_list', [
-//    'as' => 'room.room_list',
-//    'uses' => 'RoomController@changeRoomNumber'
-//]);
-
 Route::get('room/remove', [
     'as' => 'room.remove',
     'uses' => 'RoomController@removeRoom'
@@ -48,6 +43,8 @@ Route::resource('user', 'UserController');
 Route::resource('room', 'RoomController');
 
 Route::resource('transaction', 'TransactionController');
+
+Route::resource('payment', 'PaymentController');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

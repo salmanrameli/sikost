@@ -75,6 +75,8 @@
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
                     <button type="button" class="btn btn-primary btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Transactions</a></button>
+                    <hr>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
                 </div>
             </div>
         </div>
