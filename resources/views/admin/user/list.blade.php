@@ -8,6 +8,7 @@
     <div class="page-header">
         <h2>Edit Renter Details</h2>
     </div>
+    <div class="padding"></div>
     <div class="col-lg-12">
         <table class="table">
             <tr>

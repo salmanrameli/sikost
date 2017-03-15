@@ -44,7 +44,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.user.register');
+        return view('admin.admin.create');
     }
 
     /**
@@ -92,7 +92,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $admin = User::findorFail($id);
+
+        return view('admin.admin.show')->with('admin', $admin);
     }
 
     /**
@@ -103,7 +105,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
+        $admin = User::findorFail($id);
 
+        return view('admin.admin.edit')->with('admin', $admin);
     }
 
     /**
@@ -115,7 +119,24 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $admin = User::findorFail($id);
+
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'sex' => 'required',
+            'birth' => 'required',
+            'address' => 'required',
+            'phone' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $admin->fill($input)->save();
+
+        Session::flash('status', 'Administrator details successfully updated');
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -131,20 +152,8 @@ class AdminController extends Controller
 
     public function showAll()
     {
-        $users = DB::table('users')->where('isAdmin', '=', false)->get();
+        $admin = DB::table('users')->where('isAdmin', '=', true)->get();
 
-        return view('admin.user.all')->with('users', $users);
-    }
-
-    public function createAdmin()
-    {
-        return view('admin.admin.create');
-    }
-
-    public function allRenter()
-    {
-        $users = DB::table('users')->where('isAdmin', '=', false)->get();
-
-        return view('admin.user.list')->with('users', $users);
+        return view('admin.admin.list')->with('admins', $admin);
     }
 }

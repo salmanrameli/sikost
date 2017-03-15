@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -21,9 +22,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->name;
+        $users = DB::table('users')->where('isAdmin', '=', false)->get();
 
-        return view('user.home')->with('user', $user);
+        return view('admin.user.all')->with('users', $users);
     }
 
     /**
@@ -33,7 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.register');
     }
 
     /**
@@ -74,7 +75,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findorFail($id);
+
+        return view('admin.user.show')->with('user', $user);
     }
 
     /**
@@ -128,5 +131,17 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showAll()
+    {
+
+    }
+
+    public function allRenter()
+    {
+        $users = DB::table('users')->where('isAdmin', '=', false)->get();
+
+        return view('admin.user.list')->with('users', $users);
     }
 }

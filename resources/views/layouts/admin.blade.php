@@ -27,9 +27,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Renter
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href={{ route('admin.create') }}>Renter Registration</a></li>
-                            <li><a href="{{ route('admin.allUser') }}">Show All Renter</a></li>
-                            <li><a href="{{ route('admin.allRenter') }}">Edit Renter Details</a></li>
+                            <li><a href={{ route('user.create') }}>Register New Renter</a></li>
+                            <li><a href="{{ route('user.index') }}">Show All Renter</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -54,7 +53,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Settings
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('admin.admin_create') }}">Register New Admin</a></li>
+                            <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
+                            <li><a href="{{ route('admin.all') }}">Show All Admin</a></li>
                         </ul>
                     </li>
                 </ul>

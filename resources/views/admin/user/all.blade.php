@@ -12,19 +12,15 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Sex</th>
-                <th>Birth date</th>
-                <th>Address</th>
-                <th>Phone Number</th>
+                <th>Show Details</th>
+                <th>Edit Details</th>
             </tr>
             @foreach($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
-                <td>{{ $user->sex }}</td>
-                <td>{{ $user->birth }}</td>
-                <td>{{ $user->address }}</td>
-                <td>{{ $user->phone }}</td>
+                <td><a href="{{ route('user.show', $user->id) }}" class="btn btn-info">Show Details</a></td>
+                <td><a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit Details</a></td>
             </tr>
             @endforeach
         </table>

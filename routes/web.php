@@ -12,16 +12,6 @@
 */
 Auth::routes();
 
-Route::get('admin/all_users', [
-    'as' => 'admin.allUser',
-    'uses' => 'AdminController@showAll'
-]);
-
-Route::get('admin/new_admin', [
-    'as' => 'admin.admin_create',
-    'uses' => 'AdminController@createAdmin'
-]);
-
 Route::get('room/availability', [
     'as' => 'room.check_availability',
     'uses' => 'RoomController@checkAvailability'
@@ -38,8 +28,13 @@ Route::get('room/remove', [
 ]);
 
 Route::get('renter/all', [
-    'as' => 'admin.allRenter',
-    'uses' => 'AdminController@allRenter'
+    'as' => 'user.allRenter',
+    'uses' => 'UserController@allRenter'
+]);
+
+Route::get('admin/all', [
+    'as' => 'admin.all',
+    'uses' => 'adminController@showAll'
 ]);
 
 Route::get('/', function () {
