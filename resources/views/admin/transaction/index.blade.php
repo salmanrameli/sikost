@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
 @section('title')
-    All Transactions History
+    All Booking History
     @endsection
 
 @section('content')
     <div class="page-header">
-        <h2>All Transactions History</h2>
+        <h2>All Booking History</h2>
     </div>
     <table class="table">
         <tr>
-            <th>Transaction ID</th>
+            <th>Booking ID</th>
             <th>Renter Name</th>
             <th>Room Number</th>
             <th>Rent Started</th>

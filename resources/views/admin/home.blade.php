@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Admin Home
+    Dashboard
     @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
             <br>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Renter
+                    <span class="glyphicon glyphicon-user"></span> Renter
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('user.create') }}">Register New Renter</a></button>
@@ -59,7 +59,7 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="glyphicon glyphicon-stats"></span> Transaction Stats
+                    <span class="glyphicon glyphicon-stats"></span> Transaction Statistics
                 </div>
                 <div class="panel-body">
                     <div class="col-lg-12 blue">
@@ -70,19 +70,20 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="glyphicon glyphicon-book"></span> Booking & Transaction
+                    <span class="glyphicon glyphicon-book"></span> Booking
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}">Room Booking</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}"><span class="glyphicon glyphicon-pencil"></span> Room Booking</a></button>
                     <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Booking History</a></button>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Payments
+                    <span class="glyphicon glyphicon-usd"></span> Payments
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.all') }}">Show Payment History</a></button>
                 </div>
             </div>
         </div>

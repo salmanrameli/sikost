@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Payment;
 use App\Transaction;
+use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -66,7 +68,11 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        //
+        $payments = DB::table('payments')->where('renter_id', '=', $id)->get();
+
+        $renter = User::findorFail($id);
+
+        return view('admin.payment.show')->with('payments', $payments)->with('renter', $renter);
     }
 
     /**
@@ -101,5 +107,14 @@ class PaymentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showAll()
+    {
+        $id = DB::table('payments')->pluck('renter_id');
+
+        $renters = DB::table('users')->where('id', '=', $id)->get();
+
+        return view('admin.payment.all')->with('renters', $renters);
     }
 }

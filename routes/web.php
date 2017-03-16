@@ -32,6 +32,11 @@ Route::get('admin/all', [
     'uses' => 'adminController@showAll'
 ]);
 
+Route::get('payments/all', [
+    'as' => 'payment.all',
+    'uses' => 'PaymentController@showAll'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });

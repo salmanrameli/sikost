@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Payment;
-use App\Room;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

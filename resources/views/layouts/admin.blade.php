@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Renter
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Renter
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href={{ route('user.create') }}>Register New Renter</a></li>
@@ -32,7 +32,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Room
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Rooms
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('room.create') }}">Add New Room</a></li>
@@ -42,17 +42,15 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Booking & Transaction
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Booking & Transaction
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
                             <li><a href="{{ route('transaction.index') }}">Show All Booking History</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Settings
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Admin Settings
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
@@ -60,10 +58,11 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Payments
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Payments
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
+                            <li><a href="{{ route('payment.all') }}">Show Payment History</a></li>
                         </ul>
                     </li>
                 </ul>
