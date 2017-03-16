@@ -16,6 +16,7 @@
                 <th>Room Number</th>
                 <th>Payment Date</th>
                 <th>Amount</th>
+                <th>Edit Payment</th>
             </tr>
             @foreach($payments as $payment)
             <tr>
@@ -23,6 +24,7 @@
                 <td>{{ $payment->room_number }}</td>
                 <td>{{ $payment->date }}</td>
                 <td>{{ $payment->amount }}</td>
+                <td><a href="{{ route('payment.edit', $payment->id) }}" class="btn btn-warning">Edit Payment Details</a></td>
             </tr>
                 @endforeach
         </table>

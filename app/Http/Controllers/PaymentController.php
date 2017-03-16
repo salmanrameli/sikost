@@ -83,7 +83,13 @@ class PaymentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $payment = Payment::findorFail($id);
+
+        $transaction = DB::table('transactions')->where('user_id', '=', $payment->renter_id)->get();
+
+        $renter = DB::table('users')->where('id', '=', $payment->renter_id)->first();
+
+        return view('admin.payment.edit')->with('payment', $payment)->with('transaction', $transaction)->with('renter', $renter);
     }
 
     /**
@@ -95,7 +101,22 @@ class PaymentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $payment = Payment::findorFail($id);
+
+        $this->validate($request, [
+            'renter_id' => 'required',
+            'room_number' => 'required',
+            'date' => 'required',
+            'amount' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $payment->fill($input)->save();
+
+        Session::flash('status', 'Payment details successfully updated');
+
+        return redirect()->route('admin.index');
     }
 
     /**
