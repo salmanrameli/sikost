@@ -22,6 +22,11 @@ Route::get('room/remove', [
     'uses' => 'RoomController@removeRoom'
 ]);
 
+Route::get('transaction/move', [
+    'as' => 'transaction.move',
+    'uses' => 'TransactionController@move'
+]);
+
 Route::get('renter/all', [
     'as' => 'user.allRenter',
     'uses' => 'UserController@allRenter'

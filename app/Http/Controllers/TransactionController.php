@@ -90,7 +90,13 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $transaction = Transaction::findorFail($id);
+
+        $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
+
+        $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->pluck('room_number');
+
+        return view('admin.transaction.move.edit')->with('transaction', $transaction)->with('rooms', $rooms);
     }
 
     /**
@@ -102,7 +108,19 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $transaction = Transaction::findorFail($id);
+
+        $this->validate($request, [
+            'room_number' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $transaction->fill($input)->save();
+
+        Session::flash('status', 'Successfully move to other room');
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -114,5 +132,12 @@ class TransactionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function move()
+    {
+        $booked = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get();
+
+        return view('admin.transaction.move.index')->with('transactions', $booked);
     }
 }
