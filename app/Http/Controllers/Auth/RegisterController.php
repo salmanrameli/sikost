@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'password' => 'required|confirmed',
-            'role' => 'required',
+            'isAdmin' => 'required',
         ]);
     }
 
@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
-            'role' => $data['role']
+            'isAdmin' => $data['isAdmin']
         ]);
     }
 }

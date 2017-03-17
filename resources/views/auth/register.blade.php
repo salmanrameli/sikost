@@ -140,8 +140,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ Form::radio('role', 'true', true) }}
-                                    {{ Form::label('role', 'Admin', ['class' => 'control-label']) }}
+                                    {{ Form::radio('isAdmin', 1, true) }}
+                                    {{ Form::label('isAdmin', 'Admin', ['class' => 'control-label']) }}
                                 </div>
 
                                 @if ($errors->has('isAdmin'))
