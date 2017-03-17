@@ -75,7 +75,7 @@
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}"><span class="glyphicon glyphicon-pencil"></span> Room Booking</a></button>
                     <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Booking History</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.move') }}">Move to Other Room</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.move') }}">Move to Another Room</a></button>
                 </div>
             </div>
             <div class="panel panel-default">

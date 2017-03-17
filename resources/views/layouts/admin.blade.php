@@ -47,6 +47,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
                             <li><a href="{{ route('transaction.index') }}">Show All Booking History</a></li>
+                            <li><a href="{{ route('transaction.move') }}">Move to Another Room</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
