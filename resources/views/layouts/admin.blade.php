@@ -62,7 +62,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
-                            <li><a href="{{ route('payment.all') }}">Show Payment History</a></li>
+                            <li><a href="{{ route('payment.index') }}">Show Payment History</a></li>
                         </ul>
                     </li>
                 </ul>

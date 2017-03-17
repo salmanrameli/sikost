@@ -84,7 +84,7 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.all') }}">Show Payment History</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Show Payment History</a></button>
                 </div>
             </div>
         </div>
