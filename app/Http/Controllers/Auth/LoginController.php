@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,9 +38,9 @@ class LoginController extends Controller
 
     Protected function authenticated(Request $request, $user)
     {
-        if($request->isAdmin == 'true')
-        {
-            return redirect('/admin');
+        if ( ! $user->isAdmin ) {
+            Auth::logout();
+            return redirect('login')->withErrors(['isAdmin' => 'Only admin users may log in']);
         }
     }
 

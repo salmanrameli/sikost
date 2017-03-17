@@ -126,7 +126,7 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    {{ Form::radio('isAdmin', 0, true) }}
+                    {{ Form::radio('isAdmin', 1, true) }}
                     {{ Form::label('isAdmin', 'User', ['class' => 'control-label']) }}
                 </div>
 
