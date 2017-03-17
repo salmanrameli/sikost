@@ -127,7 +127,13 @@ class PaymentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $payment = Payment::findorFail($id);
+
+        $payment->delete();
+
+        Session::flash('status', 'Payment details successfully deleted');
+
+        return redirect()->route('admin.index');
     }
 
     public function showAll()

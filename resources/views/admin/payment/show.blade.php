@@ -17,6 +17,7 @@
                 <th>Payment Date</th>
                 <th>Amount</th>
                 <th>Edit Payment</th>
+                <th>Delete Payment</th>
             </tr>
             @foreach($payments as $payment)
             <tr>
@@ -25,6 +26,11 @@
                 <td>{{ $payment->date }}</td>
                 <td>{{ $payment->amount }}</td>
                 <td><a href="{{ route('payment.edit', $payment->id) }}" class="btn btn-warning">Edit Payment Details</a></td>
+                <td>
+                    {{ Form::open(['method' => 'DELETE', 'route' => ['payment.destroy', $payment->id]]) }}
+                    {{ Form::submit('Delete Payment', ['class' => 'btn btn-danger']) }}
+                    {{ Form::close() }}
+                </td>
             </tr>
                 @endforeach
         </table>

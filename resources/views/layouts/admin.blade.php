@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Booking & Transaction
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Booking
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
