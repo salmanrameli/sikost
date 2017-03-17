@@ -19,6 +19,21 @@ class PaymentController extends Controller
      */
     public function index()
     {
+        $test = Payment::all();
+
+        if($test->count())
+        {
+            $id = DB::table('payments')->pluck('renter_id');
+
+            $renters = DB::table('users')->where('id', '=', $id)->get();
+
+            return view('admin.payment.all')->with('renters', $renters);
+        }
+        else
+        {
+            return view('admin.payment.no-result');
+        }
+
 
     }
 
@@ -138,10 +153,6 @@ class PaymentController extends Controller
 
     public function showAll()
     {
-        $id = DB::table('payments')->pluck('renter_id');
 
-        $renters = DB::table('users')->where('id', '=', $id)->get();
-
-        return view('admin.payment.all')->with('renters', $renters);
     }
 }
