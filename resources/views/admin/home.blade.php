@@ -31,6 +31,35 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <span class="glyphicon glyphicon-stats"></span> Transaction Statistics
+                </div>
+                <div class="panel-body">
+                    <div class="col-lg-12 blue">
+                        <h4>Total Rents</h4>
+                        <h2>{{ $transactions }}</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                    </div>
+                    <div class="col-lg-12 light-blue">
+                        <h4>This Month's Income</h4>
+                        <h2>Rp {{ $income }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-usd"></span> Payments
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Show Payment History</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <span class="glyphicon glyphicon-stats"></span> Room Status
                 </div>
                 <div class="panel-body">
@@ -46,30 +75,6 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="glyphicon glyphicon-tags"></span> Rooms
-                </div>
-                <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
-                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('room.index') }}"><span class="glyphicon glyphicon-edit"></span> Change Room Number</a></button>
-                    <button type="button" class="btn btn-danger btn-lg btn-block"><a href="{{ route('room.remove') }}"><span class="glyphicon glyphicon-minus"></span> Remove Room</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-stats"></span> Transaction Statistics
-                </div>
-                <div class="panel-body">
-                    <div class="col-lg-12 blue">
-                        <h4>Total Transactions</h4>
-                        <h2>{{ $transactions }}</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
                     <span class="glyphicon glyphicon-book"></span> Booking
                 </div>
                 <div class="panel-body">
@@ -80,11 +85,13 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="glyphicon glyphicon-usd"></span> Payments
+                    <span class="glyphicon glyphicon-tags"></span> Rooms
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Show Payment History</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('room.index') }}"><span class="glyphicon glyphicon-edit"></span> Change Room Number</a></button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block"><a href="{{ route('room.remove') }}"><span class="glyphicon glyphicon-minus"></span> Remove Room</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}">Check Room Availability</a></button>
                 </div>
             </div>
         </div>

@@ -8,8 +8,6 @@
     <div class="page-header">
         <h2>Add Payment</h2>
     </div>
-    <div class="padding"></div>
-    <div class="col-lg-2"></div>
     <div class="col-lg-8">
         {{ Form::open(['route' => 'payment.store']) }}
 
@@ -41,5 +39,18 @@
         {{ Form::close() }}
 
     </div>
-    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        <table class="table">
+            <tr>
+                <th>Room Number</th>
+                <th>Renter Name</th>
+            </tr>
+            @foreach($bookeds as $booked)
+                <tr>
+                    <td>{{ $booked->room_number }}</td>
+                    <td>{{ $booked->user->name }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
     @endsection

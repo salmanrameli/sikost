@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\Transaction;
 use App\User;
 use Carbon\Carbon;
@@ -34,7 +35,9 @@ class AdminController extends Controller
 
         $transactions = Transaction::all()->count();
 
-        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('transactions', $transactions);
+        $income = Payment::whereMonth('created_at', '=', date('m'))->sum('amount');
+
+        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('transactions', $transactions)->with('income', $income);
     }
 
     /**
