@@ -7,7 +7,11 @@
 @section('content')
     <div class="col-lg-12">
         <div class="col-lg-4">
-            <h2>Greetings, {{ $user->name }}</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>Greetings, {{ $user->name }}</h4>
+                </div>
+            </div>
             <br>
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -15,7 +19,7 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('user.create') }}">Register New Renter</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('user.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Renter</a></button>
+                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('user.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show Renters</a></button>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -24,7 +28,7 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}"><span class="glyphicon glyphicon-user"></span> Register New Admin</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('admin.all') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Admin</a></button>
+                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('admin.all') }}"><span class="glyphicon glyphicon-th-list"></span> Show Administrators</a></button>
                 </div>
             </div>
         </div>
@@ -52,8 +56,8 @@
                     <span class="glyphicon glyphicon-usd"></span> Payments
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}">Add Payment</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Show Payment History</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}"><span class="glyphicon glyphicon-usd"></span> Add Payment</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Payment Histories</a></button>
                 </div>
             </div>
         </div>
@@ -79,7 +83,7 @@
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}"><span class="glyphicon glyphicon-pencil"></span> Room Booking</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show All Booking History</a></button>
+                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Booking Histories</a></button>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.move') }}">Move to Another Room</a></button>
                 </div>
             </div>

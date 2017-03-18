@@ -43,7 +43,7 @@
             {{ Form::date('rent_ended', null, ['class' => 'form-control']) }}
         </div>
 
-        {{ Form::submit('Move to another room', ['class' => 'btn btn-warning']) }}
+        {{ Form::submit('Move to this room', ['class' => 'btn btn-warning']) }}
         {{ Form::close() }}
     </div>
     <div class="col-lg-2"></div>

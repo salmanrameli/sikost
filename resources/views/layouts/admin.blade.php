@@ -28,7 +28,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href={{ route('user.create') }}>Register New Renter</a></li>
-                            <li><a href="{{ route('user.index') }}">Show All Renter</a></li>
+                            <li><a href="{{ route('user.index') }}">Show Renters</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -46,7 +46,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('transaction.create') }}">Room Booking</a></li>
-                            <li><a href="{{ route('transaction.index') }}">Show All Booking History</a></li>
+                            <li><a href="{{ route('transaction.index') }}">Booking Histories</a></li>
                             <li><a href="{{ route('transaction.move') }}">Move to Another Room</a></li>
                         </ul>
                     </li>
@@ -55,7 +55,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
-                            <li><a href="{{ route('admin.all') }}">Show All Admin</a></li>
+                            <li><a href="{{ route('admin.all') }}">Show Administrators</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -63,7 +63,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('payment.create') }}">Add Payment</a></li>
-                            <li><a href="{{ route('payment.index') }}">Show Payment History</a></li>
+                            <li><a href="{{ route('payment.index') }}">Payment Histories</a></li>
                         </ul>
                     </li>
                 </ul>
