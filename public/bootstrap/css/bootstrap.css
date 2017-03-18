@@ -3236,18 +3236,21 @@ fieldset[disabled] .btn-success.focus {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
+  /*background-color: #5bc0de;*/
+  background-color: #87D4FE;
   border-color: #46b8da;
 }
 .btn-info:focus,
 .btn-info.focus {
   color: #fff;
-  background-color: #31b0d5;
+  /*background-color: #31b0d5;*/
+  background-color: #1DA8F9;
   border-color: #1b6d85;
 }
 .btn-info:hover {
   color: #fff;
-  background-color: #31b0d5;
+  /*background-color: #31b0d5;*/
+  background-color: #1DA8F9;
   border-color: #269abc;
 }
 .btn-info:active,
@@ -6799,8 +6802,16 @@ button.close {
   background-color: orangered;
 }
 
-.blue {
+.cyan {
   background-color: #54F5FA;
+}
+
+.blue {
+  background-color: #1DAAFC;
+}
+
+.light-blue {
+  background-color: #88D5FF;
 }
 
 .rounded-corners {
