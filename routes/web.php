@@ -56,6 +56,8 @@ Route::resource('transaction', 'TransactionController');
 
 Route::resource('payment', 'PaymentController');
 
+Route::resource('expenses', 'ExpensesController');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Route::get('/home', 'HomeController@index');

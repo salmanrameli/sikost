@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             DB::table('users')->insert([
                 'id' => $faker->unique()->numberBetween($min = 1, $max = 10),
                 'name' => $faker->name($gender = 'male'),
-                'sex' => 'male',
+                'sex' => 'Male',
                 'birth' => $faker->date,
                 'address' => $faker->address,
                 'phone' => $faker->phoneNumber,
