@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\expense;
+use App\ExpensesCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
-class expenses_controller extends Controller
+class ExpensesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +26,9 @@ class expenses_controller extends Controller
      */
     public function create()
     {
-        //
+        $categories = ExpensesCategories::all();
+
+        return view('admin.expenses.create')->with('categories', $categories);
     }
 
     /**
@@ -34,7 +39,18 @@ class expenses_controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'amount' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        Expense::create($input);
+
+        Session::flash('status', 'Expense Payment Successfully Added');
+
+        return redirect()->route('admin.index');
     }
 
     /**
