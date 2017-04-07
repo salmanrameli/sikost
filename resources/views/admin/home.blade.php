@@ -31,6 +31,14 @@
                     <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('admin.all') }}"><span class="glyphicon glyphicon-th-list"></span> Show Administrators</a></button>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Expenses Settings
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses_categories.create') }}">New Expenses Category</a></button>
+                </div>
+            </div>
         </div>
         <div class="col-lg-4">
             <div class="panel panel-default">
@@ -58,6 +66,14 @@
                 <div class="panel-body">
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}"><span class="glyphicon glyphicon-usd"></span> Add Payment</a></button>
                     <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.index') }}">Payment Histories</a></button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Expenses
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses.create') }}">New Expenses</a></button>
                 </div>
             </div>
         </div>
