@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\expense;
+use App\Expense;
 use App\ExpensesCategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -16,7 +16,9 @@ class ExpensesController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::all();
+
+        return view(admin.expenses.all)->with('expenses', $expenses);
     }
 
     /**
@@ -41,7 +43,8 @@ class ExpensesController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'amount' => 'required'
+            'date' => 'required',
+            'amount' => 'required',
         ]);
 
         $input = $request->all();

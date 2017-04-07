@@ -24,6 +24,11 @@
         <br>
 
         <div class="form-group">
+            {{ Form::label('date', 'Payment Date', ['class' => 'control-label']) }}
+            {{ Form::date('date', null, ['class' => 'form-control']) }}
+        </div>
+
+        <div class="form-group">
             {{ Form::label('amount', 'Expense Payment Amount (Rp)', ['class' => 'control-label']) }}
             {{ Form::text('amount', null, ['class' => 'form-control']) }}
         </div>

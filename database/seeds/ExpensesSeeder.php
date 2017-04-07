@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ExpensesSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class ExpensesSeeder extends Seeder
     {
         DB::table('expenses')->insert([
             'name' => 'Internet',
+            'date' => Carbon::now(),
             'amount' => '600000'
         ]);
     }
