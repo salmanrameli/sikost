@@ -15,7 +15,9 @@ class ExpensesCategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = ExpensesCategories::all();
+
+        return view('admin.expenses_categories.all')->with('categories', $categories);
     }
 
     /**
@@ -68,7 +70,9 @@ class ExpensesCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $expenses = ExpensesCategories::findorFail($id);
+
+        return view('admin.expenses_categories.edit')->with('expenses', $expenses);
     }
 
     /**
@@ -80,7 +84,19 @@ class ExpensesCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = ExpensesCategories::findorFail($id);
+
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $category->fill($input)->save();
+
+        Session::flash('status', 'Expenses category name successfully changed');
+
+        return redirect()->route('admin.index');
     }
 
     /**
