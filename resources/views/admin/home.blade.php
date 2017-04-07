@@ -73,7 +73,8 @@
                     Expenses
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses.create') }}">New Expenses</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses.create') }}">New Expenses Payment</a></button>
+                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses.index') }}">Expenses Payment Histories</a></button>
                 </div>
             </div>
         </div>

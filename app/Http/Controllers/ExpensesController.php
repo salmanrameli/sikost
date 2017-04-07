@@ -18,7 +18,7 @@ class ExpensesController extends Controller
     {
         $expenses = Expense::all();
 
-        return view(admin.expenses.all)->with('expenses', $expenses);
+        return view('admin.expenses.all')->with('expenses', $expenses);
     }
 
     /**
@@ -75,7 +75,11 @@ class ExpensesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $expenses = Expense::findorFail($id);
+
+        $name = ExpensesCategories::all();
+
+        return view('admin.expenses.edit')->with('expenses', $expenses)->with('categories', $name);
     }
 
     /**
@@ -87,7 +91,21 @@ class ExpensesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $expenses = Expense::findorFail($id);
+
+        $this->validate($request, [
+            'date' => 'required',
+            'name' => 'required',
+            'amount' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $expenses->fill($input)->save();
+
+        Session::flash('status', 'Expenses Payment Successfully Changed');
+
+        return redirect()->route('admin.index');
     }
 
     /**
