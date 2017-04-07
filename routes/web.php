@@ -58,6 +58,8 @@ Route::resource('payment', 'PaymentController');
 
 Route::resource('expenses', 'ExpensesController');
 
+Route::resource('expenses_categories', 'ExpensesCategoriesController');
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Route::get('/home', 'HomeController@index');
