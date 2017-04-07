@@ -20,7 +20,7 @@
         @foreach($transactions as $transaction)
         <tr>
                 <td>{{ $transaction->id }}</td>
-                <td>{{ $transaction->user->name }}</td>
+                <td>{{ $transaction->user_id }}</td>
                 <td>{{ $transaction->room_number }}</td>
                 <td>{{ $transaction->rent_started }}</td>
                 <td>{{ $transaction->rent_ended }}</td>
