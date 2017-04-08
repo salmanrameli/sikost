@@ -15,7 +15,6 @@ class PastTransactionSeeder extends Seeder
         $faker = Faker::create();
         foreach (range(1,6) as $index) {
             DB::table('transactions')->insert([
-                'id' => $faker->unique()->numberBetween($min = 0, $max = 5),
                 'user_id' => $faker->numberBetween($min = 0, $max = 10),
                 'room_number' => $faker->numberBetween($min = 0, $max = 10),
                 'rent_started' => $faker->dateTimeBetween($startDate = '-11 months', $endDate = '-5 months', $timezone = date_default_timezone_get()),

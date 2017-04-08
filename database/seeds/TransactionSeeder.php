@@ -15,7 +15,6 @@ class TransactionSeeder extends Seeder
         $faker = Faker::create();
         foreach (range(5,10) as $index) {
             DB::table('transactions')->insert([
-                'id' => $faker->unique()->numberBetween($min = 6, $max = 10),
                 'user_id' => $faker->numberBetween($min = 0, $max = 10),
                 'room_number' => $faker->numberBetween($min = 0, $max = 10),
                 'rent_started' => $faker->dateTimeBetween($startDate = '-3 months', $endDate = 'now', $timezone = date_default_timezone_get()),
