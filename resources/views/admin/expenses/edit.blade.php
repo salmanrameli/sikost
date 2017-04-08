@@ -33,7 +33,7 @@
             {{ Form::text('amount', null, ['class' => 'form-control']) }}
         </div>
 
-        {{ Form::submit('Save Changes', ['class' => 'btn btn-warning']) }}
+        {{ Form::submit('Save Changes', ['class' => 'btn btn-warning btn-lg']) }}
         {{ Form::close() }}
 
     </div>

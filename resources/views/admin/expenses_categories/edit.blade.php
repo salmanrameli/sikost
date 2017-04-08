@@ -17,7 +17,7 @@
             {{ Form::text('name', null, ['class' => 'form-control']) }}
         </div>
 
-        {{ Form::submit('Edit Expenses Category Name', ['class' => 'btn btn-warning']) }}
+        {{ Form::submit('Edit Expenses Category Name', ['class' => 'btn btn-warning btn-lg']) }}
 
         {{ Form::close() }}
     </div>

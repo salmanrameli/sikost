@@ -7,12 +7,12 @@
 @section('content')
     <div class="col-lg-12">
         <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h4>Greetings, {{ $user->name }}</h4>
-                </div>
-            </div>
-            <br>
+            {{--<div class="panel panel-default">--}}
+                {{--<div class="panel-body">--}}
+                    {{--<h4>Greetings, {{ $user->name }}</h4>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<br>--}}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="glyphicon glyphicon-user"></span> Renter
