@@ -12,7 +12,7 @@ class ExpensesCategoriesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('expensesCategories')->insert([
+        DB::table('expenses_categories')->insert([
             'name' => 'Internet',
         ]);
     }
