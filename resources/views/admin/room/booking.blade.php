@@ -13,10 +13,14 @@
     <div class="col-lg-6">
         {{ Form::open(['route' => 'transaction.store']) }}
 
-        <div class="form-group">
-            {{ Form::label('user_id', 'Renter ID', ['class' => 'control-label']) }}
-            {{ Form::text('user_id', null, ['class' => 'form-control']) }}
-        </div>
+        <label for="renter_id" class="control-label">Renter Name</label>
+        <select class="form-control" name="renter_id" id="renter_id" data-parsley-required="true">
+            @foreach ($users as $user) {
+            <option value="{{ $user->id }}">{{ $user->name }}</option>
+            }
+            @endforeach
+        </select>
+        <br>
 
         <div class="form-group">
             <label for="room_number">Room Number</label>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Transaction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,11 +30,13 @@ class TransactionController extends Controller
      */
     public function create()
     {
+        $user = DB::table('users')->where('isAdmin', '=', false)->get();
+
         $empty = Transaction::where([['rent_started', '<=', Carbon::today()->toDateString()], ['rent_ended', '>', Carbon::today()->toDateString()]])->get()->pluck('room_number');
 
         $rooms = DB::table('rooms')->whereNotIn('room_number', $empty)->pluck('room_number');
 
-        return view('admin.room.booking')->with('rooms', $rooms);
+        return view('admin.room.booking')->with('rooms', $rooms)->with('users', $user);
     }
 
     /**
