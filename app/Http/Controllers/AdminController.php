@@ -66,7 +66,6 @@ class AdminController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'password' => 'required|confirmed',
-            'isAdmin' => 'required'
         ]);
 
         $admin = new User();
@@ -78,7 +77,7 @@ class AdminController extends Controller
         $admin->address = $request->address;
         $admin->phone = $request->phone;
         $admin->password = bcrypt($request->password);
-        $admin->isAdmin = $request->isAdmin;
+        $admin->isAdmin = true;
 
         $admin->save();
 

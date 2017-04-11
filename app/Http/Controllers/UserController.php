@@ -49,7 +49,6 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed',
-            'role' => 'required'
         ]);
 
         $user = new User();
@@ -58,7 +57,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->role = $request->role;
+        $user->isAdmin = false;
 
         $user->save();
 

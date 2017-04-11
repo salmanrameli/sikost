@@ -121,23 +121,6 @@
             </div>
         </div>
 
-        <div class="form-group hidden{{ $errors->has('isAdmin') ? ' has-error' : '' }}">
-            <label for="role" class="col-md-4 control-label">Role</label>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    {{ Form::radio('isAdmin', 1, true) }}
-                    {{ Form::label('isAdmin', 'User', ['class' => 'control-label']) }}
-                </div>
-
-                @if ($errors->has('isAdmin'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('isAdmin') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-success btn-lg">

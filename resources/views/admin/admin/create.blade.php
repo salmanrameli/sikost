@@ -55,13 +55,6 @@
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
         </div>
 
-        <div class="form-group hidden">
-            {{ Form::radio('isAdmin', 1, true) }}
-            {{ Form::label('isAdmin', 'Admin', ['class' => 'control-label']) }}<br>
-            {{ Form::radio('isAdmin', 0) }}
-            {{ Form::label('isAdmin', 'User', ['class' => 'control-label']) }}
-        </div>
-
         {{ Form::submit('Register Administrator', ['class' => 'btn btn-lg btn-success']) }}
         {{ Form::close() }}
 
