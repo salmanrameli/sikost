@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class AdminSeeder extends Seeder
 {
@@ -12,13 +13,14 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create();
         DB::table('users')->insert([
             'id' => '404',
-            'name' => 'salman',
-            'sex' => 'male',
+            'name' => 'Salman',
+            'sex' => 'Male',
             'birth' => '1996-06-01',
-            'address' => 'no address',
-            'phone' => '11111',
+            'address' => $faker->address,
+            'phone' => $faker->phoneNumber,
             'password' => bcrypt('salman'),
             'isAdmin' => true
         ]);
