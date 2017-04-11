@@ -8,7 +8,7 @@
     <div class="page-header">
         <h2>Renter Registration</h2>
     </div>
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.store') }}">
+    <form class="form-horizontal" role="form" method="POST" action="{{ route('user.store') }}">
         {{ csrf_field() }}
 
         <div class="form-group{{ $errors->has('id') ? ' has-error' : '' }}">

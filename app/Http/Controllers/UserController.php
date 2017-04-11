@@ -46,8 +46,12 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'id' => 'required',
             'name' => 'required',
-            'email' => 'required|email',
+            'sex' => 'required',
+            'birth' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
             'password' => 'required|confirmed',
         ]);
 
@@ -55,13 +59,16 @@ class UserController extends Controller
 
         $user->id = $request->id;
         $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->sex = $request->sex;
+        $user->birth = $request->birth;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->password = bcrypt('password');
         $user->isAdmin = false;
 
         $user->save();
 
-        Session::flash('status', 'User berhasil didaftarkan');
+        Session::flash('status', 'User successfully registered');
 
         return redirect()->route('admin.index');
      }
