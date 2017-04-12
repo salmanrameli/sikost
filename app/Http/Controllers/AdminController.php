@@ -35,7 +35,7 @@ class AdminController extends Controller
 
         $transactions = Transaction::all()->count();
 
-        $income = Payment::whereMonth('created_at', '=', date('m'))->sum('amount');
+        $income = Payment::whereMonth('date', '=', date('m'))->sum('amount');
 
         return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('transactions', $transactions)->with('income', $income);
     }
