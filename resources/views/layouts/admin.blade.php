@@ -5,8 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
         <script src="{{ asset('bootstrap/js/bootstrap.js') }}" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                checkProfit();
+                checkIncome();
+
+                function checkProfit()
+                {
+                    var number = $('#profit_amount').text();
+                    var b = number.split(' ');
+                    var c = parseInt(b[1]);
+                    if(c <= 0)
+                    {
+                        $('#profit').css({"background-color":"orangered"});
+                    }
+                    else
+                    {
+                        $('#profit').css({"background-color":"#37eb65"});
+                    }
+                }
+                function checkIncome()
+                {
+                    var income = $('#income_amount').text();
+                    var b = income.split(' ');
+                    var c = parseInt(b[1]);
+                    if(c <= 0)
+                    {
+                        $('#income').css({"background-color":"orangered"})
+                    }
+                    else
+                    {
+                        $('#income').css({"background-color":"#37eb65"})
+                    }
+                }
+            });
+        </script>
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
     <nav class="navbar navbar-default">

@@ -7,12 +7,12 @@
 @section('content')
     <div class="col-lg-12">
         <div class="col-lg-4">
-            {{--<div class="panel panel-default">--}}
-                {{--<div class="panel-body">--}}
-                    {{--<h4>Greetings, {{ $user->name }}</h4>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<br>--}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>Greetings, {{ $user->name }}</h4>
+                </div>
+            </div>
+            <br>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="glyphicon glyphicon-user"></span> Renter
@@ -47,16 +47,23 @@
                     <span class="glyphicon glyphicon-stats"></span> Transaction Statistics
                 </div>
                 <div class="panel-body">
-                    <div class="col-lg-12 blue">
-                        <h4>Total Rents</h4>
-                        <h2>{{ $transactions }}</h2>
+                    <div class="col-lg-12" id="income">
+                        <h4>This Month's Income</h4>
+                        <h2 id="income_amount">Rp {{ $income }}</h2>
                     </div>
                     <div class="col-lg-12">
                         <br>
                     </div>
-                    <div class="col-lg-12 light-blue">
-                        <h4>This Month's Income</h4>
-                        <h2>Rp {{ $income }}</h2>
+                    <div class="col-lg-12">
+                        <h4>This Month's Expenses</h4>
+                        <h2>Rp {{ $expenses }}</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                    </div>
+                    <div class="col-lg-12" id="profit">
+                        <h4>This Month's Profit (Rp)</h4>
+                        <h2 id="profit_amount">Rp {{ $profit }}</h2>
                     </div>
                 </div>
             </div>

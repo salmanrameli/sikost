@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Payment;
 use App\Transaction;
 use App\User;
+use App\Expense;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,11 +34,13 @@ class AdminController extends Controller
 
         $empty = DB::table('rooms')->whereNotIn('room_number', $rooms)->count();
 
-        $transactions = Transaction::all()->count();
-
         $income = Payment::whereMonth('date', '=', date('m'))->sum('amount');
 
-        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('transactions', $transactions)->with('income', $income);
+        $expenses = Expense::whereMonth('date', '=', date('m'))->sum('amount');
+
+        $profit = $income - $expenses;
+
+        return view('admin.home')->with('user', $userInfo)->with('booked', $booked)->with('empty', $empty)->with('income', $income)->with('expenses', $expenses)->with('profit', $profit);
     }
 
     /**
