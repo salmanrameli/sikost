@@ -35,5 +35,8 @@
                 <td>{{ $admin->phone }}</td>
             </tr>
         </table>
+        {{ Form::open(['method' => 'DELETE', 'route' => ['admin.destroy', $admin->id]]) }}
+        {{ Form::submit('Delete This Administrator', ['class' => 'btn btn-lg btn-danger']) }}
+        {{ Form::close() }}
     </div>
     @endsection

@@ -84,7 +84,7 @@ class AdminController extends Controller
 
         $admin->save();
 
-        Session::flash('status', 'User successfully added');
+        Session::flash('status', 'Administrator successfully added');
 
         return redirect()->route('admin.index');
     }
@@ -152,7 +152,13 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $admin = User::findorFail($id);
+
+        $admin->delete();
+
+        Session::flash('status', 'Administrator successfully removed');
+
+        return redirect()->route('admin.index');
     }
 
     public function showAll()
