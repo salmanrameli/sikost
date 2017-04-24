@@ -37,6 +37,9 @@
                 <td>{{ $user->phone }}</td>
             </tr>
         </table>
+        {{ Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id]]) }}
+        {{ Form::submit('Delete This Renter Details', ['class' => 'btn btn-lg btn-danger']) }}
+        {{ Form::close() }}
     </div>
     <div class="col-lg-2"></div>
     @endsection

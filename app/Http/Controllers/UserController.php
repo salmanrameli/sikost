@@ -136,12 +136,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $user = User::findorFail($id);
 
-    public function showAll()
-    {
+        $user->delete();
 
+        Session::flash('status', 'Renter details successfully deleted');
+
+        return redirect()->route('admin.index');
     }
 
     public function allRenter()
