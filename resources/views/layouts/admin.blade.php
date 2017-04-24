@@ -70,10 +70,11 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="">Rooms
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
+                            <li class="divider"></li>
                             <li><a href="{{ route('room.create') }}">Add New Room</a></li>
                             <li><a href="{{ route('room.index') }}">Change Room Number</a></li>
                             <li><a href="{{ route('room.remove') }}">Remove Room</a></li>
-                            <li><a href="{{ route('room.check_availability') }}">Check Room Availability</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -86,14 +87,6 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Admin Settings
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
-                            <li><a href="{{ route('admin.all') }}">Show Administrators</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="">Payments
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -101,8 +94,24 @@
                             <li><a href="{{ route('payment.index') }}">Payment Histories</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="">Expenses
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('expenses.create') }}">New Expenses Payment</a></li>
+                            <li><a href="{{ route('expenses.index') }}">Expenses Payment Histories</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href=""><span class="glyphicon glyphicon-cog"></span>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('admin.create') }}">Register New Admin</a></li>
+                            <li><a href="{{ route('admin.all') }}">Show Administrators</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
                 </ul>
             </div>
