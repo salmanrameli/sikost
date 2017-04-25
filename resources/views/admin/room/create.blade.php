@@ -25,7 +25,7 @@
             {{ Form::text('room_number', null, ['class' => 'form-control']) }}
         </div>
 
-        {{ Form::submit('Register Room', ['class' => 'btn btn-default btn-lg']) }}
+        {{ Form::submit('Register Room', ['class' => 'btn btn-success btn-lg']) }}
         {{ Form::close() }}
     </div>
     <div class="col-lg-3"></div>
