@@ -39,7 +39,7 @@ class RoomController extends Controller
     {
         $rooms = Room::orderBy('room_number', 'asc')->get();
 
-        return view('admin.room.create')->with('rooms', $rooms);
+        return view('admin.index')->with('rooms', $rooms);
     }
 
     /**
