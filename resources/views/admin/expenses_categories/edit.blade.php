@@ -10,7 +10,7 @@
     </div>
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
-        {{ Form::model($expenses, ['method' => 'PATCH', 'route' => ['expenses_categories.update', $expenses->id]]) }}
+        {{ Form::model($expenses, ['method' => 'PATCH', 'route' => ['expenses_categories.update', $expenses->name]]) }}
 
         <div class="form-group">
             {{ Form::label('name', 'Name', ['class' => 'control-label']) }}

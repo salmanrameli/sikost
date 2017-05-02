@@ -8,6 +8,10 @@ class ExpensesCategories extends Model
 {
     protected $table = 'expenses_categories';
 
+    protected $primaryKey = 'name';
+
+    public $incrementing = false;
+
     protected $fillable = [
         'name'
     ];

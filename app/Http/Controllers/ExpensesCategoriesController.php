@@ -75,7 +75,7 @@ class ExpensesCategoriesController extends Controller
      */
     public function edit($id)
     {
-        $expenses = ExpensesCategories::findorFail($id);
+        $expenses = ExpensesCategories::where('name', '=', $id)->first();
 
         return view('admin.expenses_categories.edit')->with('expenses', $expenses);
     }
