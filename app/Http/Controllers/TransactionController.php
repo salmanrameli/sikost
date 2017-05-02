@@ -53,7 +53,7 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'user_id' => 'required',
+            'renter_id' => 'required',
             'room_number' => 'required',
             'rent_started' => 'required',
             'rent_ended' => 'required'
@@ -61,7 +61,7 @@ class TransactionController extends Controller
 
         $transaction = new Transaction();
 
-        $transaction->user_id = $request->user_id;
+        $transaction->user_id = $request->renter_id;
         $transaction->room_number = $request->room_number;
         $transaction->rent_started = $request->rent_started;
         $transaction->rent_ended = Carbon::createFromFormat('Y-m-d', $request->rent_started)->addMonth($request->rent_ended);
