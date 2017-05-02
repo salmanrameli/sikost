@@ -18,8 +18,8 @@
                     <span class="glyphicon glyphicon-user"></span> Renter
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('user.create') }}">Register New Renter</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('user.index') }}"><span class="glyphicon glyphicon-th-list"></span> Show Renters</a></button>
+                    <a href="{{ route('user.create') }}"><button type="button" class="btn btn-default btn-lg btn-block">Register New Renter</button></a><br>
+                    <a href="{{ route('user.index') }}"><button type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> Show Renters</button></a>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -27,8 +27,8 @@
                     <span class="glyphicon glyphicon-cog"></span> Administrator Settings
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('admin.create') }}"><span class="glyphicon glyphicon-user"></span> Register New Admin</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('admin.all') }}"><span class="glyphicon glyphicon-th-list"></span> Show Administrators</a></button>
+                    <a href="{{ route('admin.create') }}"><button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-user"></span> Register New Admin</button></a><br>
+                    <a href="{{ route('admin.all') }}"><button type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> Show Administrators</button></a>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -36,8 +36,8 @@
                     Expenses Settings
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses_categories.create') }}">New Expenses Category</a></button>
-                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('expenses_categories.index') }}"><span class="glyphicon glyphicon-edit"></span> Edit Expenses Name</a></button>
+                    <a href="{{ route('expenses_categories.create') }}"><button type="button" class="btn btn-default btn-lg btn-block">New Expenses Category</button></a><br>
+                    <a href="{{ route('expenses_categories.index') }}"><button type="button" class="btn btn-warning btn-lg btn-block"><span class="glyphicon glyphicon-edit"></span> Edit Expenses Name</button></a>
                 </div>
             </div>
         </div>
@@ -72,8 +72,8 @@
                     <span class="glyphicon glyphicon-usd"></span> Payments
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('payment.create') }}"><span class="glyphicon glyphicon-usd"></span> Add Payment</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('payment.index') }}"><span class="glyphicon glyphicon-th-list"></span> Payment Histories</a></button>
+                    <a href="{{ route('payment.create') }}"><button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-usd"></span> Add Payment</button></a><br>
+                    <a href="{{ route('payment.index') }}"><button type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> Payment Histories</button></a>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -81,8 +81,8 @@
                     Expenses
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('expenses.create') }}">New Expenses Payment</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('expenses.index') }}"><span class="glyphicon glyphicon-th-list"></span> Expenses Payment Histories</a></button>
+                    <a href="{{ route('expenses.create') }}"><button type="button" class="btn btn-default btn-lg btn-block">New Expenses Payment</button></a><br>
+                    <a href="{{ route('expenses.index') }}"><button type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> Expenses Payment Histories</button></a>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-lg-12">
                         <br>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.check_availability') }}"><span class="glyphicon glyphicon-search"></span> Check Room Availability</a></button>
+                        <a href="{{ route('room.check_availability') }}"><button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-search"></span> Check Room Availability</button></a>
                     </div>
                 </div>
             </div>
@@ -111,9 +111,9 @@
                     <span class="glyphicon glyphicon-book"></span> Booking
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.create') }}"><span class="glyphicon glyphicon-pencil"></span> Room Booking</a></button>
-                    <button type="button" class="btn btn-info btn-lg btn-block"><a href="{{ route('transaction.index') }}"><span class="glyphicon glyphicon-th-list"></span> Booking Histories</a></button>
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('transaction.move') }}">Move to Another Room</a></button>
+                    <a href="{{ route('transaction.create') }}"><button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-pencil"></span> Room Booking</button></a><br>
+                    <a href="{{ route('transaction.index') }}"><button type="button" class="btn btn-info btn-lg btn-block"><span class="glyphicon glyphicon-th-list"></span> Booking Histories</button></a><br>
+                    <a href="{{ route('transaction.move') }}"><button type="button" class="btn btn-default btn-lg btn-block">Move to Another Room</button></a>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -121,9 +121,9 @@
                     <span class="glyphicon glyphicon-tags"></span> Rooms
                 </div>
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default btn-lg btn-block"><a href="{{ route('room.create') }}"><span class="glyphicon glyphicon-plus"></span> Add New Room</a></button>
-                    <button type="button" class="btn btn-warning btn-lg btn-block"><a href="{{ route('room.index') }}"><span class="glyphicon glyphicon-edit"></span> Change Room Number</a></button>
-                    <button type="button" class="btn btn-danger btn-lg btn-block"><a href="{{ route('room.remove') }}"><span class="glyphicon glyphicon-minus"></span> Remove Room</a></button>
+                    <a href="{{ route('room.create') }}"><button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-plus"></span> Add New Room</button></a><br>
+                    <a href="{{ route('room.index') }}"><button type="button" class="btn btn-warning btn-lg btn-block"><span class="glyphicon glyphicon-edit"></span> Change Room Number</button></a><br>
+                    <a href="{{ route('room.remove') }}"><button type="button" class="btn btn-danger btn-lg btn-block"><span class="glyphicon glyphicon-minus"></span> Remove Room</button></a>
                 </div>
             </div>
         </div>
