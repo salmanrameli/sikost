@@ -46,7 +46,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required',
+            'id' => 'required|unique:users',
             'name' => 'required',
             'sex' => 'required',
             'birth' => 'required',

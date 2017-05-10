@@ -51,7 +51,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'room_number' => 'required'
+            'room_number' => 'required|unique:rooms'
         ]);
 
         $input = $request->all();

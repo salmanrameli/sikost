@@ -44,12 +44,18 @@ class ExpensesCategoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:expenses_categories',
         ]);
 
-        $input = $request->all();
+        $category = new ExpensesCategories();
 
-        ExpensesCategories::create($input);
+        $a = $request->name;
+
+        $low = strtolower($a);
+
+        $category->name = $low;
+
+        $category->save();
 
         Session::flash('status', 'New expense category successfully added');
 
@@ -92,7 +98,7 @@ class ExpensesCategoriesController extends Controller
         $category = ExpensesCategories::findorFail($id);
 
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required|unique:expenses_categories'
         ]);
 
         $input = $request->all();
