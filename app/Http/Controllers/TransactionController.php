@@ -55,7 +55,7 @@ class TransactionController extends Controller
         $this->validate($request, [
             'renter_id' => 'required',
             'room_number' => 'required',
-            'rent_started' => 'required',
+            'rent_started' => 'required|date',
             'rent_ended' => 'required'
         ]);
 
