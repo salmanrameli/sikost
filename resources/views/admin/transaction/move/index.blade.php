@@ -25,7 +25,7 @@
                 <td>{{ $transaction->rent_started }}</td>
                 <td>{{ $transaction->rent_ended }}</td>
                 <td>
-                    <button type="button" class="btn btn-warning"><a href="{{ route('transaction.edit', ['id' => $transaction->id]) }}">Change Room</a></button>
+                    <a href="{{ route('transaction.edit', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-warning">Change Details</button></a>
                 </td>
             </tr>
         @endforeach

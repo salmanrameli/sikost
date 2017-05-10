@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
 @section('title')
-    Move Room
+    Edit Booking
     @endsection
 
 @section('content')
     <div class="page-header">
-        <h2>Move Room for: {{ $transaction->user->name }}</h2>
+        <h2>Change Booking for: {{ $transaction->user->name }}</h2>
     </div>
     <div class="padding"></div>
     <div class="col-lg-2"></div>
@@ -18,7 +18,7 @@
             {{ Form::text('id', null, ['class' => 'form-control']) }}
         </div>
 
-        <div class="form-group hidden">
+        <div class="form-group">
             {{ Form::label('user_id', 'Renter ID', ['class' => 'control-label']) }}
             {{ Form::text('user_id', null, ['class' => 'form-control']) }}
         </div>
@@ -33,17 +33,17 @@
             </select>
         </div>
 
-        <div class="form-group hidden">
+        <div class="form-group">
             {{ Form::label('rent_started', 'Rent Started On', ['class' => 'control-label']) }}
             {{ Form::date('rent_started', null, ['class' => 'form-control']) }}
         </div>
 
-        <div class="form-group hidden">
+        <div class="form-group">
             {{ Form::label('rent_ended', 'Rent Ended On', ['class' => 'control-label']) }}
             {{ Form::date('rent_ended', null, ['class' => 'form-control']) }}
         </div>
 
-        {{ Form::submit('Move to this room', ['class' => 'btn btn-warning']) }}
+        {{ Form::submit('Save Changes', ['class' => 'btn btn-warning']) }}
         {{ Form::close() }}
     </div>
     <div class="col-lg-2"></div>

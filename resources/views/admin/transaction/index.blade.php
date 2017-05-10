@@ -16,6 +16,7 @@
             <th>Rent Started</th>
             <th>Rent Ended</th>
             <th>Details</th>
+            <th>Edit</th>
         </tr>
         @foreach($transactions as $transaction)
         <tr>
@@ -25,7 +26,10 @@
                 <td>{{ $transaction->rent_started }}</td>
                 <td>{{ $transaction->rent_ended }}</td>
                 <td>
-                    <button type="button" class="btn btn-info"><a href="{{ route('transaction.show', ['id' => $transaction->id]) }}">Show Details</a></button>
+                    <a href="{{ route('transaction.show', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-info">Show Details</button></a>
+                </td>
+                <td>
+                    <a href="{{ route('transaction.extend', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-warning">Edit Rent Duration</button></a>
                 </td>
         </tr>
         @endforeach

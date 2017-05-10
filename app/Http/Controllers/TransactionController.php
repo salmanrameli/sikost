@@ -119,14 +119,17 @@ class TransactionController extends Controller
         $transaction = Transaction::findorFail($id);
 
         $this->validate($request, [
+            'renter_id' => 'required',
             'room_number' => 'required',
+            'rent_started' => 'required|date',
+            'rent_ended' => 'required'
         ]);
 
         $input = $request->all();
 
         $transaction->fill($input)->save();
 
-        Session::flash('status', 'Successfully move to other room');
+        Session::flash('status', 'Changes successfully saved');
 
         return redirect()->route('admin.index');
     }
