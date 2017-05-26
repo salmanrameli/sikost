@@ -29,7 +29,7 @@
                     <a href="{{ route('transaction.show', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-info">Show Details</button></a>
                 </td>
                 <td>
-                    <a href="{{ route('transaction.extend', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-warning">Edit Rent Duration</button></a>
+                    <a href="{{ route('transaction.edit', ['id' => $transaction->id]) }}"><button type="button" class="btn btn-warning">Edit Rent Duration</button></a>
                 </td>
         </tr>
         @endforeach
