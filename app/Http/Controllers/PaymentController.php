@@ -32,7 +32,8 @@ class PaymentController extends Controller
 
             $renters = DB::table('users')->where('id', '=', $id)->get();
 
-            return view('admin.payment.all')->with('renters', $renters);
+//            return view('admin.payment.all')->with('renters', $renters);
+            return view('admin.payment.all')->with('renters', $test);
         }
         else
         {

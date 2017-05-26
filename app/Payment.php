@@ -12,11 +12,11 @@ class Payment extends Model
 
     public function transaction()
     {
-        return $this->belongsTo('App\Transaction');
+        return $this->belongsTo('App\Transaction', 'renter_id');
     }
 
-    public function user()
+    public function ruser()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'renter_id');
     }
 }

@@ -33,20 +33,20 @@
             <h3>{{ $details->rent_ended }}</h3>
         </div>
     </div>
-    <div class="col-lg-4">
-        <h3>Payment History</h3>
-        <br>
-        <table class="table">
-            <tr>
-                <th>Payment Date</th>
-                <th>Payment Amount</th>
-            </tr>
-            @foreach($payments as $payment)
-                <tr>
-                    <td>{{ $payment->date }}</td>
-                    <td>Rp {{ $payment->amount }}</td>
-                </tr>
-            @endforeach
-        </table>
-    </div>
+    {{--<div class="col-lg-4">--}}
+        {{--<h3>Payment History</h3>--}}
+        {{--<br>--}}
+        {{--<table class="table">--}}
+            {{--<tr>--}}
+                {{--<th>Payment Date</th>--}}
+                {{--<th>Payment Amount</th>--}}
+            {{--</tr>--}}
+            {{--@foreach($payments as $payment)--}}
+                {{--<tr>--}}
+                    {{--<td>{{ $payment->date }}</td>--}}
+                    {{--<td>Rp {{ $payment->amount }}</td>--}}
+                {{--</tr>--}}
+            {{--@endforeach--}}
+        {{--</table>--}}
+    {{--</div>--}}
     @endsection

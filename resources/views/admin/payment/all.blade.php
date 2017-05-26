@@ -14,13 +14,16 @@
             <tr>
                 <th>Renter ID</th>
                 <th>Renter Name</th>
-                <th>Payment</th>
+                <th>Room Number</th>
+                <th>Amount</th>
             </tr>
             @foreach($renters as $renter)
             <tr>
-                <td>{{ $renter->id }}</td>
-                <td>{{ $renter->name }}</td>
-                <td><a href="{{ route('payment.show', $renter->id) }}" class="btn btn-info">View Payment History</a></td>
+                <td>{{ $renter->renter_id }}</td>
+                <td>{{ $renter->ruser->name }}</td>
+                <td>{{ $renter->room_number }}</td>
+                <td>{{ $renter->amount }}</td>
+                {{--<td><a href="{{ route('payment.show', $renter->id) }}" class="btn btn-info">View Payment History</a></td>--}}
             </tr>
                 @endforeach
         </table>
